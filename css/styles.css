@@ -14,6 +14,7 @@ h6 {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -60,7 +61,7 @@ button {
     border-bottom: 1px solid #e7e9fc;
     padding-top: 24px;
     padding-bottom: 24px;
-}
+    }
 .container-page-header {
     display: flex;
     justify-content: space-between;
@@ -95,10 +96,21 @@ button {
 .header-menu {
     display: flex;
     gap: 40px;
+
 }
 .main-contacts {
     display: flex;
     gap: 40px;    
+}
+.current::after {
+display: block;
+width: 48px;
+height: 4px;
+border-radius: 2px;
+background-color: #404BBF;
+position: absolute;
+bottom: 0;
+content: "";
 }
 .menu-link:hover,
 .menu-link:focus {
@@ -112,7 +124,7 @@ button {
     letter-spacing: 0.02em;
     padding-top: 24px;
     padding-bottom: 24px;
-
+    position: relative;
 }
 .list-contakts-item:hover,
 .list-contakts-item:focus {
@@ -138,6 +150,11 @@ button {
     flex-direction: column;
     justify-content: center;
     background-color: #2e2f42;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.70),
+        rgba(46, 47, 66, 0.70)),
+    url(../images/hero/people-office.jpg);
+    background-size: cover;
 }
 .main-title {
     color: #FFF;
@@ -168,6 +185,9 @@ button {
     margin: 0 auto;
     min-width: 169px;
     padding: 16px 32px;
+    transition-property: background-color; 
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list-hero {
     padding-top: 120px;
@@ -180,6 +200,20 @@ button {
 .adventages-list {
     width: calc((100% - 72px) / 4);
     text-align: left;    
+}
+.adventages-list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #8E8F99;
+    width: 264px;
+    height: 112px;
+    flex-shrink: 0;
+    padding: 24px 100px;    
 }
 .title-list-hero {
     color: #2E2F42;
@@ -215,11 +249,11 @@ button {
 .list-item-personel {
     background-color:  #FFFFFF;
     border-radius: 0px 0px 4px 4px;
-    width: calc((100% - 72px) / 4);    
+    width: calc((100% - 72px) / 4);  
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);  
 }
 .ourteam-name {
-    padding: 32px 0;
-    text-align: center;    
+    padding: 32px 0;   
 }
 .name-personel {
     color: #2E2F42;
@@ -240,6 +274,34 @@ button {
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+.social-list{
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+}
+.social-item {
+    marker: none;
+}
+.social-icon {
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-list-item {
+    fill: #F4F4FD;
+}
+.social-icon:hover, .social-icon:focus {
+    background-color: #404BBF;
+}
 .section-portfolio {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -258,12 +320,44 @@ button {
 .list-portfolio {
     display: flex;
     flex-wrap: wrap;
-    gap: 48px 24px;    
+    gap: 48px 24px;  
+    align-content: flex-start;  
 }
 .img-list-portfolio {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;    
+    background: #FFF;
+    width: calc((100% - 24px * 2) / 3);
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);    
+}
+.img-portfolio {
+    position: relative;
+    overflow: hidden;
+}
+.overlay-text {
+    color: #F4F4FD;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: justify;
+    padding: 40px 32px;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    transform: translateY(100%);
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img-list-portfolio:hover .overlay-text {
+    transform: translateY(0);
+}
+.img-list-portfolio:hover {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .conteiner-section-portfolio {
     padding: 32px 16px;
@@ -291,6 +385,13 @@ button {
     background-color: #2E2F42;
     padding: 100px 0;
     text-align: left;        
+}
+.container-footer-page {
+    display: flex;
+    align-items: baseline;
+}
+.footer-page-logotype {
+    margin-right: 120px
 }
 .footer-logo {
     color: #4D5AE5;
@@ -324,4 +425,32 @@ button {
     line-height: 1.5;
     letter-spacing: 0.02em;
     width: 264px;
+}
+.social-text {
+    color: #FFF;
+    font-weight: 500;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+.footer-page-social-list {
+    display: flex;
+    gap: 16px;  
+}
+.footer-page-social-link {
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-page-icons {
+    fill: #F4F4FD;
+}
+.footer-page-social-link:hover, .footer-page-social-link:focus {
+    background-color: #31D0AA;
 }
