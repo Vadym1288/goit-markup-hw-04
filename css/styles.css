@@ -61,6 +61,7 @@ button {
     border-bottom: 1px solid #e7e9fc;
     padding-top: 24px;
     padding-bottom: 24px;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
     }
 .container-page-header {
     display: flex;
@@ -103,14 +104,14 @@ button {
     gap: 40px;    
 }
 .current::after {
-display: block;
-width: 48px;
-height: 4px;
-border-radius: 2px;
-background-color: #404BBF;
-position: absolute;
-bottom: 0;
-content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404BBF;
+    position: absolute;
+    bottom: -1px;
+    content: "";
 }
 .menu-link:hover,
 .menu-link:focus {
@@ -125,6 +126,12 @@ content: "";
     padding-top: 24px;
     padding-bottom: 24px;
     position: relative;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.current {
+    color: #404bbf;
 }
 .list-contakts-item:hover,
 .list-contakts-item:focus {
@@ -136,6 +143,9 @@ content: "";
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list-contakts-item {
     font-style: normal;
@@ -155,6 +165,10 @@ content: "";
         rgba(46, 47, 66, 0.70)),
     url(../images/hero/people-office.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 1440px;
+    margin: auto;
 }
 .main-title {
     color: #FFF;
@@ -431,6 +445,8 @@ content: "";
     font-weight: 500;
     margin-bottom: 16px;
     font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
 }
 .footer-page-social-list {
     display: flex;
